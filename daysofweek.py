@@ -1,3 +1,6 @@
+#Esse programa se destina a pratica de python
+#Definição de classe e operações com dias da semana
+
 class WeekDayError(Exception):
     pass
 
