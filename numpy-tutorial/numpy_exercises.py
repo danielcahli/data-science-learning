@@ -1,4 +1,3 @@
-#This notes are for my personal studies and are from https://www.w3schools.com/
 #NumPy stands for Numerical Python.
 #NumPy aims to provide an array object that is up to 50x faster than traditional Python lists.
 #NumPy arrays are stored at one continuous place in memory unlike lists, so processes can access and manipulate them very efficiently.
@@ -8,8 +7,6 @@
 import numpy as np
 from numpy import random
 
-
-"""
 print(np.__version__)
 #2.2.0
 
@@ -1389,7 +1386,7 @@ newarr = np.setdiff1d(arr1, arr2, assume_unique=True)
 
 print(newarr) #[1 2]
 
-#Find the symmetric difference of the set1 and set2: '''
+#Find the symmetric difference of the set1 and set2: 
 
 set1 = np.array([1, 2, 3, 4])
 set2 = np.array([3, 4, 5, 6])
