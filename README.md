@@ -1,1 +1,2 @@
-THE FILES IN THIS REPOSITORY ARE FOR MY DATA SCIENCE LEARNING
+This repository contains exercises and projects from my Data Science learning path.
+
