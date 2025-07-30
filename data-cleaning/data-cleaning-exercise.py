@@ -1,6 +1,3 @@
-'''
-#This notes are for my personal studies and are from https://www.kaggle.com/code/alexisbcook/handling-missing-values
-
 import pandas as pd
 import numpy as np
 
@@ -109,7 +106,6 @@ print('Minimum value:', float(normalized_pledges.min()),
 ax = sns.histplot(normalized_pledges, kde=True)
 ax.set_title("Normalized data")
 plt.show()
-'''
 
 # modules we'll use
 import pandas as pd
