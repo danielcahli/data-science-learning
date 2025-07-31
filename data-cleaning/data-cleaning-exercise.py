@@ -1,3 +1,6 @@
+
+#This notes are for my personal studies and are from https://www.kaggle.com/code/alexisbcook/handling-missing-values
+
 import pandas as pd
 import numpy as np
 
@@ -107,6 +110,7 @@ ax = sns.histplot(normalized_pledges, kde=True)
 ax.set_title("Normalized data")
 plt.show()
 
+
 # modules we'll use
 import pandas as pd
 import numpy as np
@@ -146,3 +150,6 @@ day_of_month_earthquakes = day_of_month_earthquakes.dropna()
 # plot the day of the month
 sns.displot(day_of_month_earthquakes, kde=False, bins=31)
 plt.show()
+
+
+
