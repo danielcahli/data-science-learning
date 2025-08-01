@@ -3,8 +3,8 @@ from sklearn.model_selection import train_test_split
 from pathlib import Path
 
 # Read the data
-X_full = pd.read_csv(Path("C:/Users/danie/py/progs/machine-learning-intermediate/datasets/train.csv"), index_col='Id')
-X_test_full = pd.read_csv(Path("C:/Users/danie/py/progs/machine-learning-intermediate/datasets/test.csv"), index_col='Id')
+X_full = pd.read_csv(Path("C:/Users/danie/py/progs/machine-learning-intermediate/dataset/train.csv"), index_col='Id')
+X_test_full = pd.read_csv(Path("C:/Users/danie/py/progs/machine-learning-intermediate/dataset/test.csv"), index_col='Id')
 
 # Remove rows with missing target, separate target from predictors
 X_full.dropna(axis=0, subset=['SalePrice'], inplace=True)
