@@ -29,8 +29,8 @@ This comparison helps determine which strategy performs better in terms of model
 The dataset was split into training and test sets.  
 Categorical features were handled in three different ways:  
 1. Removing them entirely  
-2. Applying Ordinal Encoding  
-3. Applying One-Hot Encoding (for low-cardinality features)  
+2. Applying **'Ordinal Encoding'**  
+3. Applying **'One-Hot Encoding'** (for low-cardinality features)  
 
 Model performance for each approach was evaluated using Mean Absolute Error (MAE).
 
