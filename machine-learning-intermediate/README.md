@@ -16,9 +16,14 @@ These models were evaluated using **Mean Absolute Error (MAE)** on a validation 
 After selecting the preferred configuration, the final model was trained on the full training dataset,  
 used to generate predictions on the test dataset, and the results were saved in a CSV file suitable for competition submission.
 
-### 1. Handling Missing Values
-Used techniques like mean/median imputation and dropped columns with too many missing values.  
-Compared model performance using different strategies with `RandomForestRegressor`.
+### 2. Missing Values
+In this exercise, missing values were handled using two different approaches.  
+A helper function was created to evaluate each method by calculating the **Mean Absolute Error (MAE)** on a validation set.
+
+- In the first approach, columns with missing values were dropped entirely.  
+- In the second approach, missing values were filled using **`SimpleImputer`** from scikit-learn.
+
+This comparison helps determine which strategy performs better in terms of model accuracy.
 
 ### 2. Categorical Variables
 Encoded categorical features using `OrdinalEncoder` and `OneHotEncoder`.  
