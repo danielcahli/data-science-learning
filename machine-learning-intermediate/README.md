@@ -25,7 +25,7 @@ A helper function was created to evaluate each method by calculating the **Mean 
 
 This comparison helps determine which strategy performs better in terms of model accuracy.
 
-### 2. Categorical Variables
+### 3. Categorical Variables
 The dataset was split into training and test sets.  
 Categorical features were handled in three different ways:  
 1. Removing them entirely  
