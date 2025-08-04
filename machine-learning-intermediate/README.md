@@ -34,23 +34,41 @@ Categorical features were handled in three different ways:
 
 Model performance for each approach was evaluated using Mean Absolute Error (MAE).
 
-### 3. Pipelines
-Built a preprocessing pipeline to combine numerical and categorical transformations.  
-Used `ColumnTransformer` and `Pipeline` to streamline data preparation.
+### 4. Pipelines
+Pipeline is a powerful utility in scikit-learn that allows you to chain multiple preprocessing steps together and apply them sequentially. 
+This not only keeps your code clean and organized but also ensures consistency during model training and evaluation.
+Pipelines are especially useful when combined with tools like ColumnTransformer and are essential for building robust machine learning workflows.
+Why use Pipelines?
+Cleaner Code: Preprocessing steps can become messy and error-prone when handled manually. Pipelines abstract these steps into a single, well-structured object
+eliminating the need to track training and validation transformations separately.
+Fewer Bugs: By encapsulating preprocessing logic, pipelines reduce the risk of accidentally omitting a step or misapplying a transformation.
+Easier to Productionize: Deploying machine learning models often involves replicating preprocessing exactly as done during training. Pipelines package preprocessing
+and modeling steps into one object, simplifying deployment in production environments.
+Improved Model Validation: Pipelines integrate seamlessly with cross-validation techniques, allowing you to validate preprocessing and model fitting in a single step.
+You'll see this in action in the next section on cross-validation.
 
-### 4. Cross-Validation
+### 5. Cross-Validation
 Implemented cross-validation using `cross_val_score` to get more reliable model performance estimates.  
-Learned the trade-offs between validation sets and cross-validation.
+In cross-validation, we run our modeling process on different subsets of the data to get multiple measures of model quality.
+For small datasets, where extra computational burden isn't a big deal, you should run cross-validation.
+For larger datasets, a single validation set is sufficient. Your code will run faster, and you may have enough data that there's little need to re-use some of it for holdout.
 
-### 5. XGBoost
-Introduced the `XGBoostRegressor`, a powerful model for tabular data.  
-Compared its performance with Random Forest using MAE.
+### 6. XGBoost
+The data was One-hot encoded using **get_dummies()** from Pandas.
+A prediction model was created using a **XGBRegressor** Class.
 
-### 6. Data Leakage
+XGBoost stands for extreme gradient boosting, which is an implementation of gradient boosting
+with several additional features focused on performance and speed. 
+
+Gradient boosting is a method that goes through cycles to iteratively add models into an ensemble.
+It begins by initializing the ensemble with a single model, whose predictions can be pretty naive. 
+(Even if its predictions are wildly inaccurate, subsequent additions to the ensemble will address those errors.)
+
+### 7. Data Leakage
 Identified different types of data leakage (target leakage, train-test leakage).  
 Prevented leakage by correctly splitting data and avoiding certain features.
 
-### 7. Final Project (Model Selection)
+### 8. Final Project (Model Selection)
 Built and compared multiple models using different hyperparameters.  
 Trained the best model on the full training data and generated predictions on the test set.  
 Saved results to a `.csv` file ready for submission.
