@@ -1,6 +1,6 @@
 # Intermediate Machine Learning Projects
 
-This repository contains my solutions to the 7 exercises from the **Intermediate Machine Learning** course on Kaggle.  
+This repository contains solutions to the exercises from the **Intermediate Machine Learning** course on Kaggle.  
 Each exercise focuses on a key concept in practical machine learning, such as missing values, pipelines, and model tuning.
 
 ## Exercises Summary
@@ -72,6 +72,19 @@ Gradient boosting is a method that goes through cycles to iteratively add models
 It begins by initializing the ensemble with a single model, whose predictions can be pretty naive. 
 (Even if its predictions are wildly inaccurate, subsequent additions to the ensemble will address those errors.)
 
+## Data leakage 
+Leakage happens when your training data contains information about the target, but similar data will not be available when the model is used for prediction. 
+This leads to high performance on the training set (and possibly even the validation data), but the model will perform poorly in production.
+There are two main types of leakage: target leakage and train-test contamination.
+
+*Target leakage* occurs when your predictors include data that will not be available at the time you make predictions. It is important to think about target leakage in terms 
+of the timing or chronological order that data becomes available, not merely whether a feature helps make good predictions. To prevent this type of data leakage, any variable
+updated (or created) after the target value is realized should be excluded.
+
+*Train-Test Contamination* occurs when you aren't careful to distinguish training data from validation data. Recall that validation is meant to be a measure of how the model does
+on data that it hasn't considered before. You can corrupt this process in subtle ways if the validation data affects the preprocessing behavior. For example, imagine you run preprocessing 
+(like fitting an imputer for missing values) before calling train_test_split(). The end result? Your model may get good validation scores, giving you great confidence in it, but perform poorly
+when you deploy it to make decisions.
 
 ## Technologies Used
 
