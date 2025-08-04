@@ -4,7 +4,7 @@
 ### 1. Python – Intermediate Level (Edube)
 *This folder includes selected exercises from the Intermediate Python course offered by edube.org. Topics covered include:*
 
-. Functions and scope
+.Functions and scope
 
 Modules and packages
 
