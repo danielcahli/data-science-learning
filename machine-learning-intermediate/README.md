@@ -72,13 +72,6 @@ Gradient boosting is a method that goes through cycles to iteratively add models
 It begins by initializing the ensemble with a single model, whose predictions can be pretty naive. 
 (Even if its predictions are wildly inaccurate, subsequent additions to the ensemble will address those errors.)
 
-### 7. Data Leakage
-Data leakage (or leakage) happens when your training data contains information about the target, but similar data
-will not be available when the model is used for prediction. This leads to high performance on the training set
-(and possibly even the validation data), but the model will perform poorly in production.
-
-Target leakage occurs when your predictors include data that will not be available at the time you make predictions.
-
 
 ## Technologies Used
 
