@@ -38,19 +38,26 @@ Model performance for each approach was evaluated using Mean Absolute Error (MAE
 Pipeline is a powerful utility in scikit-learn that allows you to chain multiple preprocessing steps together and apply them sequentially. 
 This not only keeps your code clean and organized but also ensures consistency during model training and evaluation.
 Pipelines are especially useful when combined with tools like ColumnTransformer and are essential for building robust machine learning workflows.
+
 Why use Pipelines?
 Cleaner Code: Preprocessing steps can become messy and error-prone when handled manually. Pipelines abstract these steps into a single, well-structured object
 eliminating the need to track training and validation transformations separately.
+
 Fewer Bugs: By encapsulating preprocessing logic, pipelines reduce the risk of accidentally omitting a step or misapplying a transformation.
+
 Easier to Productionize: Deploying machine learning models often involves replicating preprocessing exactly as done during training. Pipelines package preprocessing
 and modeling steps into one object, simplifying deployment in production environments.
+
 Improved Model Validation: Pipelines integrate seamlessly with cross-validation techniques, allowing you to validate preprocessing and model fitting in a single step.
 You'll see this in action in the next section on cross-validation.
 
 ### 5. Cross-Validation
 Implemented cross-validation using `cross_val_score` to get more reliable model performance estimates.  
+
 In cross-validation, we run our modeling process on different subsets of the data to get multiple measures of model quality.
+
 For small datasets, where extra computational burden isn't a big deal, you should run cross-validation.
+
 For larger datasets, a single validation set is sufficient. Your code will run faster, and you may have enough data that there's little need to re-use some of it for holdout.
 
 ### 6. XGBoost
