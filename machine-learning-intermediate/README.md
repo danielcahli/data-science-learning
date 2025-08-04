@@ -73,15 +73,12 @@ It begins by initializing the ensemble with a single model, whose predictions ca
 (Even if its predictions are wildly inaccurate, subsequent additions to the ensemble will address those errors.)
 
 ### 7. Data Leakage
-Identified different types of data leakage (target leakage, train-test leakage).  
-Prevented leakage by correctly splitting data and avoiding certain features.
+Data leakage (or leakage) happens when your training data contains information about the target, but similar data
+will not be available when the model is used for prediction. This leads to high performance on the training set
+(and possibly even the validation data), but the model will perform poorly in production.
 
-### 8. Final Project (Model Selection)
-Built and compared multiple models using different hyperparameters.  
-Trained the best model on the full training data and generated predictions on the test set.  
-Saved results to a `.csv` file ready for submission.
+Target leakage occurs when your predictors include data that will not be available at the time you make predictions.
 
----
 
 ## Technologies Used
 
