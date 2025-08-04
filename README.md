@@ -1,4 +1,4 @@
-**###This repository contains exercises and projects from my Data Science learning path.**
+### This repository contains exercises and projects from my Data Science learning path.
 
 ## 1. Python Intermediate
 Here there are some interesting exercises from the Python Intemediate course on **edube.org**. 
