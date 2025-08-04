@@ -40,8 +40,8 @@ This not only keeps your code clean and organized but also ensures consistency d
 Pipelines are especially useful when combined with tools like ColumnTransformer and are essential for building robust machine learning workflows.
 
 Why use Pipelines?
-Cleaner Code:
-Preprocessing steps can become messy and error-prone when handled manually. Pipelines abstract these steps into a single, well-structured object
+
+Cleaner Code: Preprocessing steps can become messy and error-prone when handled manually. Pipelines abstract these steps into a single, well-structured object
 eliminating the need to track training and validation transformations separately.
 
 Fewer Bugs: By encapsulating preprocessing logic, pipelines reduce the risk of accidentally omitting a step or misapplying a transformation.
