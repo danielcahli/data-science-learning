@@ -1,11 +1,4 @@
-# Feature Engineering Projects
-
-This repository contains solutions to the exercises from the Feature Engineering course on Kaggle.
-Each notebook focuses on key concepts and practical techniques for creating effective features for machine learning models.
-
-## Exercises Summary
-
-### 1. Mutual Information
+# Mutual Information
 
 In this exercise:
 
