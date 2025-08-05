@@ -18,9 +18,16 @@ Discrete features were properly identified for accurate MI scoring.
 
 Top 20 features were visualized using a horizontal bar chart.
 
+![MI Scores](results/figure_2.png)
+
 A faceted scatter plot was created to explore relationships between SalePrice and selected features:
-![Boxen Plot](results/figure_1.png)
+
+![Scatter Plot](results/figure_1.png)
+
 A boxen plot was generated to compare the distribution of SalePrice across different BldgType values.
+
+![Boxen Plot](results/figure_3.png)
+
 
 *Interaction Effects:*
 
@@ -28,7 +35,11 @@ Using sns.lmplot, trend lines were plotted for two numerical features (GrLivArea
 
 GrLivArea shows different trends across building types, suggesting a strong interaction.
 
+![GrLivArea vs SalePrice](results/figure_4.png)
+
 MoSold shows similar trends across building types, indicating no meaningful interaction.
+
+![MoSold vs SalePrice](results/figure_5.png)
 
 *Key Takeaways:*
 
@@ -37,14 +48,6 @@ Mutual Information (MI) is a univariate metric that ranks features based on how 
 Interaction effects between features (e.g., BldgType and GrLivArea) can make seemingly uninformative features become valuable when considered together.
 
 Feature selection should consider both individual feature relevance and potential interactions.
-
-*Visual Examples*
-
-MI Score Plot (Top 20 Features)
-
-Boxen Plot of SalePrice by BldgType
-
-Scatter and Trend Line Plots by Category
 
 *Libraries Used*
 
