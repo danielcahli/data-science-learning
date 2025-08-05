@@ -18,7 +18,7 @@ plt.rc(
 )
 
 # Load data
-df = pd.read_csv(Path("C:/Users/danie/py/progs/feature-engineering/dataset/dataset.csv"))
+df = pd.read_csv(Path("C:/Users/danie/py/progs/feature-engineering/dataset.csv"))
 
 # Utility functions from Tutorial
 def make_mi_scores(X, y):
@@ -89,4 +89,5 @@ plt.show()
 #The trends lines within each category of BldgType are clearly very different, indicating an interaction between these features.
 #Since knowing BldgType tells us more about how GrLivArea relates to SalePrice, we should consider including BldgType in our feature set.
 #The trend lines for MoSold, however, are almost all the same. This feature hasn't become more informative for knowing BldgType.
+
 
