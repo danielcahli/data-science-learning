@@ -19,7 +19,7 @@ Discrete features were properly identified for accurate MI scoring.
 Top 20 features were visualized using a horizontal bar chart.
 
 A faceted scatter plot was created to explore relationships between SalePrice and selected features:
-
+![Boxen Plot](results/figure_1.png)
 A boxen plot was generated to compare the distribution of SalePrice across different BldgType values.
 
 *Interaction Effects:*
