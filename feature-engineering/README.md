@@ -20,3 +20,23 @@ A boxen plot was used to compare the distribution of SalePrice across BldgType c
 Interaction between GrLivArea and BldgType was analyzed using lmplot, showing different trend lines by category.
 
 In contrast, MoSold showed similar trends across categories, suggesting no interaction.
+
+### 2. Creating Features
+
+The goal of this exercise is to enrich the dataset by creating new features that provide useful signals to the model. 
+
+These features are derived through mathematical transformations, feature interactions, and aggregations.
+
+Overview of Steps
+Import libraries and define a scoring function
+
+Uses cross_val_score with XGBRegressor and RMSLE as the evaluation metric.
+Load dataset
+
+The dataset is loaded as a DataFrame, and the target variable (SalePrice) is separated.
+
+Mathematical Transforms was used to create new features
+
+Join all created features to the base dataset.
+
+Evaluate model performance using the score_dataset() function.
