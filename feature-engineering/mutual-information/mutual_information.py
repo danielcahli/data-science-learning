@@ -88,6 +88,10 @@ plt.show()
 
 #The trends lines within each category of BldgType are clearly very different, indicating an interaction between these features.
 #Since knowing BldgType tells us more about how GrLivArea relates to SalePrice, we should consider including BldgType in our feature set.
+<<<<<<< HEAD
 #The trend lines for MoSold, however, are almost all the same. This feature hasn't become more informative for knowing BldgType.
 
 
+=======
+#The trend lines for MoSold, however, are almost all the same. This feature hasn't become more informative for knowing BldgType.
+>>>>>>> a686df8 (Salvando alterações locais antes do pull)
