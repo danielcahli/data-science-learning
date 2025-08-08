@@ -18,8 +18,7 @@ plt.rc(
 )
 
 # Load data
-df = pd.read_csv(Path("C:/Users/danie/py/progs/feature-engineering/dataset.csv"))
-
+df = pd.read_csv(Path("feature-engineering/mutual-information/dataset.csv"))
 # Utility functions from Tutorial
 def make_mi_scores(X, y):
     X = X.copy()
@@ -42,11 +41,11 @@ def plot_mi_scores(scores):
 
 #Seaborn code to create faceted scatter plots for SalePrice vs each feature 
 features = ["YearBuilt", "MoSold", "ScreenPorch"]
-sns.relplot(
+g = sns.relplot(
     x="value", y="SalePrice", col="variable", data=df.melt(id_vars="SalePrice", value_vars=features), facet_kws=dict(sharex=False),
 );
 
-plt.show()
+g.figure.savefig("result_1.png")
 
 #Using the make_mi_scores function (introduced in the tutorial) to compute mutual information scores for the Ames features:
 #Plots a horizontal bar chart of the top 20 features using the plot_mi_scores() function
@@ -58,40 +57,35 @@ mi_scores = make_mi_scores(X, y)
 print(mi_scores.head(20))
 print(mi_scores.tail(20))
 
-plt.figure(dpi=100, figsize=(8, 5))
+g=plt.figure(dpi=100, figsize=(8, 5))
 plot_mi_scores(mi_scores.head(20))
 
-plt.show()
+g.figure.savefig("result_2.png")
 
 #generate a boxen plot comparing the distribution of SalePrice across different BldgType categories
-sns.catplot(x="BldgType", y="SalePrice", data=df, kind="boxen");
+g= sns.catplot(x="BldgType", y="SalePrice", data=df, kind="boxen");
 
-plt.show()
+g.figure.savefig("result_3.png")
 
 feature = "GrLivArea"
 
-sns.lmplot(
+g=sns.lmplot(
     x=feature, y="SalePrice", hue="BldgType", col="BldgType",
     data=df, scatter_kws={"edgecolor": 'w'}, col_wrap=3, height=4,
 );
 
-plt.show()
+g.figure.savefig("result_4.png")
 
 feature = "MoSold"
 
-sns.lmplot(
+g=sns.lmplot(
     x=feature, y="SalePrice", hue="BldgType", col="BldgType",
     data=df, scatter_kws={"edgecolor": 'w'}, col_wrap=3, height=4,
 );
 
-plt.show()
+g.figure.savefig("result_5.png")
 
 #The trends lines within each category of BldgType are clearly very different, indicating an interaction between these features.
 #Since knowing BldgType tells us more about how GrLivArea relates to SalePrice, we should consider including BldgType in our feature set.
-<<<<<<< HEAD
 #The trend lines for MoSold, however, are almost all the same. This feature hasn't become more informative for knowing BldgType.
-
-
-=======
 #The trend lines for MoSold, however, are almost all the same. This feature hasn't become more informative for knowing BldgType.
->>>>>>> a686df8 (Salvando alterações locais antes do pull)

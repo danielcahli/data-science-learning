@@ -18,15 +18,15 @@ Discrete features were properly identified for accurate MI scoring.
 
 Top 20 features were visualized using a horizontal bar chart.
 
-![MI Scores](results/figure_2.png)
+![MI Scores](results/result_2.png)
 
 A faceted scatter plot was created to explore relationships between SalePrice and selected features:
 
-![Scatter Plot](results/figure_1.png)
+![Scatter Plot](results/result_1.png)
 
 A boxen plot was generated to compare the distribution of SalePrice across different BldgType values.
 
-![Boxen Plot](results/figure_3.png)
+![Boxen Plot](results/result_3.png)
 
 
 *Interaction Effects:*
@@ -35,11 +35,11 @@ Using sns.lmplot, trend lines were plotted for two numerical features (GrLivArea
 
 GrLivArea shows different trends across building types, suggesting a strong interaction.
 
-![GrLivArea vs SalePrice](results/figure_4.png)
+![GrLivArea vs SalePrice](results/result_4.png)
 
 MoSold shows similar trends across building types, indicating no meaningful interaction.
 
-![MoSold vs SalePrice](results/figure_5.png)
+![MoSold vs SalePrice](results/result_5.png)
 
 *Key Takeaways:*
 
