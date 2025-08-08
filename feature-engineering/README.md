@@ -1,6 +1,6 @@
 # Feature Engineering Projects
 
-This repository contains solutions to the exercises from the Feature Engineering course on Kaggle.
+This repository contains solutions to the exercises from the Feature Engineering course on [Kaggle Feature Engineering course](https://www.kaggle.com/learn/feature-engineering).
 Each notebook focuses on key concepts and practical techniques for creating effective features for machine learning models.
 
 ## Exercises Summary
@@ -40,3 +40,6 @@ Mathematical Transforms was used to create new features
 Join all created features to the base dataset.
 
 Evaluate model performance using the score_dataset() function.
+
+### 3. Clustering With K-Means
+
