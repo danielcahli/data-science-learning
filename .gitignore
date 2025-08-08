@@ -1,6 +1,14 @@
+# Ignore Python virtual environments
+.venv/
+
+# Ignore Jupyter/IPython stuff
 __pycache__/
 .ipynb_checkpoints/
-*.pyc
-.DS_Store
-__pycache__/
-Building_Permits.csv
+
+# Ignore datasets and large outputs
+*.csv
+*.png
+*.jpg
+*.pdf
+*.zip
+results/
