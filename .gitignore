@@ -6,7 +6,6 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Ignore datasets and large outputs
-*.csv
 *.jpg
 *.pdf
 *.zip
