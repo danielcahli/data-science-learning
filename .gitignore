@@ -1,12 +1,13 @@
-# Ignore Python virtual environments
+# venv
 .venv/
-
-# Ignore Jupyter/IPython stuff
+# caches
 __pycache__/
 .ipynb_checkpoints/
-
-# Ignore datasets and large outputs
-*.jpg
-*.pdf
-*.zip
+# datasets e saídas grandes (ajuste ao seu fluxo)
+data/
+datasets/
 results/
+*.csv
+*.parquet
+*.zip
+*.pdf
