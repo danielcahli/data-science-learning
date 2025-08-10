@@ -10,4 +10,6 @@ results/
 *.csv
 *.parquet
 *.zip
+*.vscode
 *.pdf
+*.github

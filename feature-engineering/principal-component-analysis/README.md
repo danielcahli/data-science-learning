@@ -1,85 +1,71 @@
-# Principal Component Analysis
+dtype: float64
 
-This folder contains my solution to the **"Principal Componente Analysis"** exercise from the [Kaggle Feature Engineering course](https://www.kaggle.com/learn/feature-engineering).
+# Principal Component Analysis (PCA)
 
-Just like clustering is a partitioning of the dataset based on proximity, **PCA** can be seen as a partitioning of the variation in the data.
-**PCA** is great to discover important relationships in the data and can be used to create more informative features.
+This folder contains my solution to the **Principal Component Analysis** exercise from the [Kaggle Feature Engineering course](https://www.kaggle.com/learn/feature-engineering).
+
+PCA is a powerful technique for uncovering important relationships in data and creating more informative features. While clustering partitions a dataset based on proximity, PCA partitions the variation in the data, helping to reveal its underlying structure.
 
 ---
 
-## Exercise Steps
+## Workflow Overview
 
-- Imported necessary libraries (`pandas`, `numpy`, `matplotlib`, `seaborn`, `sklearn`, and `xgboost`)
-- Set default Matplotlib plot style
-- Defined a custom `apply_pca()` function to standardize the date, create the principal componentes and the loadings
-- Defined a custom `plot_variance()` function to plot the Explained Variance and the Cumulative Variance.
-- Defined a custom `make_mi_scores()` function using `factorize`and `mutual_info_regression`
-- Defined a custom `score_dataset()` function using cross-validation and `XGBRegressor`
+- Imported essential libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`, `sklearn`, and `xgboost`
+- Set default Matplotlib plot style for consistent visuals
+- Defined custom functions:
+      - `apply_pca()`: Standardizes data, computes principal components, and returns loadings
+      - `plot_variance()`: Plots explained and cumulative variance
+      - `make_mi_scores()`: Computes mutual information scores for features
+      - `score_dataset()`: Evaluates model performance using cross-validation and `XGBRegressor`
 - Loaded the dataset and separated the target variable (`SalePrice`)
-- Selected a subset of features that are highly correlated with our target, `SalePrice`.:
-- `['GarageArea', 'YearRemodAdd', 'TotalBsmtSF', 'GrLivArea']`
+- Selected a subset of features highly correlated with `SalePrice`:
+      - `GarageArea`, `YearRemodAdd`, `TotalBsmtSF`, `GrLivArea`
+- Printed the correlation of these features with `SalePrice`:
 
-- Printed the correlation of the features with the `SalePrice`
+```
+GarageArea      0.640
+YearRemodAdd    0.533
+TotalBsmtSF     0.633
+GrLivArea       0.707
+```
 
-GarageArea      0.640138
-YearRemodAdd    0.532974
-TotalBsmtSF     0.632529
-GrLivArea       0.706780
-dtype: float64
+- Applied PCA and printed the loadings:
 
-- Printed the loadings after apply the **PCA**
+|               |   PC1   |   PC2   |   PC3   |   PC4   |
+|---------------|---------|---------|---------|---------|
+| GarageArea    | 0.541   | -0.102  | -0.038  | 0.834   |
+| YearRemodAdd  | 0.427   | 0.887   | -0.049  | -0.171  |
+| TotalBsmtSF   | 0.510   | -0.361  | -0.667  | -0.406  |
+| GrLivArea     | 0.514   | -0.271  | 0.743   | -0.333  |
 
-                   PC1       PC2       PC3       PC4
-GarageArea    0.541229 -0.102375 -0.038470  0.833733
-YearRemodAdd  0.427077  0.886612 -0.049062 -0.170639
-TotalBsmtSF   0.510076 -0.360778 -0.666836 -0.406192
-GrLivArea     0.514294 -0.270700  0.742592 -0.332837
+- Engineered two new features and evaluated model performance:
+      - `Feature1 = GrLivArea + TotalBsmtSF`
+      - `Feature2 = YearRemodAdd * TotalBsmtSF`
+- Model performance:  
+      `Your score: 0.13792 RMSLE`
 
-- Created two new features and called the `score_dataset()` function to acess the model performance:
-
-- `Your score:` 0.13792 RMSLE was printed
-
-- Creates a boxen plot (a type of box plot that shows the distribution and outliers) for each principal component. Each plot shows the spread of values for one component (below).
+- Created boxen plots to visualize the distribution of each principal component:
 
 ![Distribution Plot](result_1.png)
 
-- The principal compponent PC1 was set to analyze.
+- Analyzed the top rows for the first principal component (PC1), sorted in descending order, displaying key columns and selected features.
 
-- Selected principal component in descending order and get the corresponding row indices.
-- Printe the original DataFrame rows, ordered by the selected principal component, showing the columns "SalePrice", "Neighborhood", "SaleCondition", and the features selected earlier.
-
-
-      SalePrice            Neighborhood SaleCondition  GarageArea  YearRemodAdd  TotalBsmtSF  GrLivArea
-1498     160000                 Edwards       Partial      1418.0          2008       6110.0     5642.0
-2180     183850                 Edwards       Partial      1154.0          2009       5095.0     5095.0
-2181     184750                 Edwards       Partial       884.0          2008       3138.0     4676.0
-1760     745000              Northridge       Abnorml       813.0          1996       2396.0     4476.0
-1767     755000              Northridge        Normal       832.0          1995       2444.0     4316.0
-...         ...                     ...           ...         ...           ...          ...        ...
-662       59000                Old_Town        Normal         0.0          1950        416.0      599.0
-2679      80500               Brookside        Normal         0.0          1950          0.0      912.0
-2879      51689  Iowa_DOT_and_Rail_Road       Abnorml         0.0          1950          0.0      729.0
-780       63900                  Sawyer        Normal         0.0          1950          0.0      660.0
-1901      39300               Brookside        Normal         0.0          1950          0.0      334.0
-
-[2930 rows x 7 columns]
+---
 
 ## Notes
 
-PCA is sensitive to the scale of the variables. When data is standardized (each feature has mean 0 and variance 1), PCA analyzes the correlation matrix, so "variation" refers to the correlation between features. This means PCA finds directions that explain the most shared variation, regardless of the original units.
+- **PCA is sensitive to feature scale.** With standardized data (mean 0, variance 1), PCA analyzes the correlation matrix; with unstandardized data, it uses the covariance matrix. Standardization ensures all features contribute equally.
+- **Principal components** are linear combinations (weighted sums) of the original features. The weights are called loadings.
+- **PCA transforms the data** from the original feature space to a new space defined by axes of maximum variation.
 
-With unstandardized data, PCA uses the covariance matrix, so "variation" refers to the actual covariances, which are influenced by the scale of each variable. In this case, features with larger scales or variances will dominate the principal components, potentially masking relationships between features with smaller variances.
+---
 
-Instead of describing the data with the original features, we describe it with its axes of variation. The axes of variation become the new features.
+## Files
 
-The new features PCA constructs are actually just linear combinations (weighted sums) of the original features.
-
-These new features are called the principal components of the data. The weights themselves are called loadings. There will be as many principal components as there are features in the original dataset.
-
-##  Files
-
-principal-componente-analysis/
+```
+principal-component-analysis/
 ├── dataset.csv
-├── principal_componente_analysis.py
+├── principal_component_analysis.py
 ├── result_1.png
 └── README.md
+```
