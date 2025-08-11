@@ -48,12 +48,6 @@ GrLivArea       0.707
 
 - Analyzed the top rows for the first principal component (PC1), sorted in descending order, displaying key columns and selected features.
 
----
-
-## Explanation of `dtype: float64`
-
-The line `dtype: float64` at the beginning of the file appears to be an unintended artifact, possibly from a code snippet or output that was copied into the README. It is not relevant to the documentation and can be removed unless it serves a specific purpose, such as illustrating the data type of a variable in the PCA workflow.
-
 ## Notes
 
 - **PCA is sensitive to feature scale.** With standardized data (mean 0, variance 1), PCA analyzes the correlation matrix; with unstandardized data, it uses the covariance matrix. Standardization ensures all features contribute equally.
