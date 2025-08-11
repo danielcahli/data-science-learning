@@ -1,5 +1,3 @@
-dtype: float64
-
 # Principal Component Analysis (PCA)
 
 This folder contains my solution to the **Principal Component Analysis** exercise from the [Kaggle Feature Engineering course](https://www.kaggle.com/learn/feature-engineering).
@@ -51,6 +49,10 @@ GrLivArea       0.707
 - Analyzed the top rows for the first principal component (PC1), sorted in descending order, displaying key columns and selected features.
 
 ---
+
+## Explanation of `dtype: float64`
+
+The line `dtype: float64` at the beginning of the file appears to be an unintended artifact, possibly from a code snippet or output that was copied into the README. It is not relevant to the documentation and can be removed unless it serves a specific purpose, such as illustrating the data type of a variable in the PCA workflow.
 
 ## Notes
 
