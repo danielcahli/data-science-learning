@@ -48,3 +48,22 @@
 - Cross validation
 
 - Extreme radient boosting
+
+### 5. Feature Engineering (Kaggle)
+*This folder features my solutions to the exercises from the Feature Enginnering course on Kaggle. It focuses on creating effective features for machine learning models as:*
+
+- Creating Features 
+
+- Mutual Information
+
+- Clustering wWith K Means
+
+- Principal Component Analysis
+
+- Target Encoding
+
+
+
+
+
+
