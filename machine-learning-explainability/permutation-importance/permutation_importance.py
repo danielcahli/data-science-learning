@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import eli5
 from eli5.sklearn import PermutationImportance
 
-data = pd.read_csv('machine-learning-explainability/permutation-importance/train.csv', nrows=50000)
+data = pd.read_csv('machine-learning-explainability/train.csv', nrows=50000)
 
 # Remove data with extreme outlier coordinates or negative fares
 data = data.query('pickup_latitude > 40.7 and pickup_latitude < 40.8 and ' +

@@ -1,6 +1,6 @@
 ## Permutation importance
 
-This folder contains my solution to the **"Permutation Importance"** exercise from the [Kaggle Feature Engineering course](https://www.kaggle.com/learn/feature-engineering).
+This folder contains my solution to the **"Permutation Importance"** exercise from the [Kaggle Machine Learning Explainability Course](https://www.kaggle.com/learn/machine-learning-explainability).
 
 Permutation importance is calculated after a model has been trained. It doesn’t change the model or its predictions, but helps answer:
 
@@ -34,7 +34,7 @@ This allows us to evaluate how important each feature is to the model’s predic
 | 7.7         | 2012-04-21 04:30:42 UTC | -73.987130       | 40.733143        | -73.991567         | 40.758092        | 1                |
 | ...         | ...                    | ...              | ...              | ...                | ...              | ...              |
 
-- Used `describe()` to understand feature distribution in `train_X` and `train_y`
+- Used `describe()` to understand feature distribution in the cleaned dataset
 
 ## Baseline Feature Importances
 
