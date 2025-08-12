@@ -56,11 +56,14 @@
 
 - Mutual Information
 
-- Clustering wWith K Means
+- Clustering With K Means
 
 - Principal Component Analysis
 
 - Target Encoding
+
+### 6. Machine Learning Explainability (Kaggle)
+
 
 
 
