@@ -10,7 +10,7 @@ SHAP values interpret the impact of having a certain value for a given feature i
 
 - Imported all required libraries
 
-- Loaded the dataset
+- Loaded the dataset `train.csv`
 
 - Exhibit the dataset columns  
 
@@ -70,6 +70,23 @@ Index(['time_in_hospital', 'num_lab_procedures', 'num_procedures',
 0.0003 ± 0.0015  glipizide_No
                        … 44 more …  
 
-- Visualizes the Partial Dependence Plots (PDP). Show how num_inpatient affects the model's predictions.
+- Visualizes the Partial Dependence Plots (PDP). 
+    - Show how num_inpatient affects the model's predictions.
 
 ![Partial Dependence Display](result_1.png)
+
+    - Show how time_in_hospital affects the model's predictions.
+
+![Partial Dependence Display](result_2.png)
+
+- Obs: It seems like time_in_hospital doesn't matter at all. The difference between the lowest value on the partial dependence plot and the highest value is about 5%.
+
+- Show the raw readmission rate for each value of time_in_hospital to see how it compares to the partial dependence plot
+
+![Partial Dependence Display](result_3.png)
+
+- Used SHAP values to show the effect of each feature of a given patient
+
+![Shap Values](result_shap.png)
+
+
