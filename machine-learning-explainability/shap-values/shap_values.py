@@ -63,11 +63,3 @@ plt.figure(figsize=(8,6))
 shap.plots.waterfall(sv_class[0], max_display=20)
 plt.tight_layout(); plt.savefig("result_shap.png", dpi=150); plt.close()
 
-# 2) Force plot HTML (interactive)
-base = float(np.ravel(sv.base_values)[cls_idx]) if np.ndim(sv.base_values) else float(sv.base_values)
-vals = sv.values[0, :, cls_idx]                 # 1D array of SHAP values for class 1
-feat = sample_row.iloc[0]                       # feature values as Series
-html = shap.force_plot(base_value=base, shap_values=vals, features=feat)
-shap.save_html("result_shap.html", html)
-
-print("Saved: result_1.png, result_2.png, result_3.png, result_shap.png, result_shap.html")
