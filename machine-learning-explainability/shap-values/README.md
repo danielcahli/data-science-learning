@@ -44,7 +44,7 @@ Index(['time_in_hospital', 'num_lab_procedures', 'num_procedures',
 
 - Split the dataset into training and validation sets using `train_test_split`
 
-- Trained a baseline model with `RandomForestRegressor` using `fit()`
+- Trained a baseline model with `RandomForestClassifier` using `fit()`
 
 - Created a `PermutationImportance` object on the baseline model and displayed importances using `eli5.explain_weights()` and `format_as_text`.
 

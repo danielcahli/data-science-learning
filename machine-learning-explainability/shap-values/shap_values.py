@@ -14,11 +14,7 @@ data = pd.read_csv('machine-learning-explainability/train.csv')
 print("Columns:", list(data.columns))
 
 # Target (handle common 'Yes'/'No' or 0/1 cases)
-y_raw = data['readmitted']
-if y_raw.dtype == object:
-    y = (y_raw.astype(str).str.upper() == 'YES').astype(int)
-else:
-    y = y_raw.astype(int)
+y = data['readmitted']
 
 # Features: NUMERIC ONLY (avoid objects/categoricals)
 X = data.drop(columns=['readmitted']).select_dtypes(include=[np.number])
