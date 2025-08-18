@@ -33,14 +33,14 @@ This project demonstrates how to use linear regression models to analyze and pre
 **1. Linear regression on Hardcover sales**
 
 - Visualize trend in Hardcover book sales using regression line.  
-![Hardcover Sales Trend](time-series/results/hardcover_sales.png)
+![Hardcover Sales Trend](results/hardcover_sales.png)
 
 ---
 
 **2. Autoregressive toy series**
 
 - Plot two synthetic AR series from the dataset.  
-![Toy AR Series](time-series/results/Series.png)
+![Toy AR Series](results/Series.png)
 
 ---
 
@@ -49,7 +49,7 @@ This project demonstrates how to use linear regression models to analyze and pre
 - Create a "time" dummy variable (increasing counter).
 - Train a regression model to predict sales based on time alone.
 - Compare actual vs predicted sales over time.  
-![Trend Model](time-series/results/Store_Sales.png)
+![Trend Model](results/Store_Sales.png)
 
 ---
 
@@ -58,7 +58,7 @@ This project demonstrates how to use linear regression models to analyze and pre
 - Use lagged sales (yesterday’s sales) as predictor.
 - Train regression model to predict today’s sales.
 - Compare actual vs predicted values in lag space.  
-![Lag Model](time-series/results/Average_Sales.png)
+![Lag Model](results/Average_Sales.png)
 
 ---
 
