@@ -60,4 +60,4 @@ cython_debug/
 # VS Code settings
 .vscode/
 
-*csv
+*csv*.csv
