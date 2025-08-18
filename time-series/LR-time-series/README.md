@@ -2,17 +2,79 @@
 
 This folder contains my solution to the **"Linear Regression With Time Series"** exercise from the [Kaggle Time Series Course](https://www.kaggle.com/learn/time-series).
 
+This project demonstrates how to use linear regression models to analyze and predict time series data.
 
-During training, the regression algorithm learns values for the parameters weight_1, weight_2, and bias that best fit the target
+---
 
-This algorithm is often called ordinary least squares since it chooses values that minimize the squared error between the target and the predictions
+## Workflow Summary
 
-The weights are also called regression coefficients and the bias is also called the intercept because it tells you where the graph of this function crosses the y-axis
+- **Import libraries**
 
-There are two kinds of features unique to time series: time-step features and lag features
+- **Book Sales Dataset**
+  - Load book sales data with "Date" as the index (parsed as datetime).
+  - Drop the "Paperback" column to focus only on "Hardcover".
+  - Add a time index (0, 1, 2, …) to represent the passage of time.
+  - Create a lag feature (`Lag_1` = previous day's sales).
+  - Reorder columns for clarity.
 
-Time-step features are features we can derive directly from the time index. The most basic time-step feature is the time dummy, which counts off time steps in the series from beginning to end
+- **Autoregressive Toy Dataset**
+  - Load toy autoregressive dataset (`ar.csv`) containing two sample series.
 
-A series is time dependent if its values can be predicted from the time they occured. 
+- **Store Sales Dataset**
+  - Load daily sales data with optimized dtypes for efficiency.
+  - Convert the index to a daily `PeriodIndex`.
+  - Add store number and product family as additional index levels (MultiIndex).
+  - Aggregate mean sales across all stores/families per day.
 
-To make a lag feature we shift the observations of the target series so that they appear to have occured later in time
+---
+
+## Experiments
+
+**1. Linear regression on Hardcover sales**
+
+- Visualize trend in Hardcover book sales using regression line.  
+![Hardcover Sales Trend](time-series/results/hardcover_sales.png)
+
+---
+
+**2. Autoregressive toy series**
+
+- Plot two synthetic AR series from the dataset.  
+![Toy AR Series](time-series/results/Series.png)
+
+---
+
+**3. Linear regression with time as a feature (trend model)**
+
+- Create a "time" dummy variable (increasing counter).
+- Train a regression model to predict sales based on time alone.
+- Compare actual vs predicted sales over time.  
+![Trend Model](time-series/results/Store_Sales.png)
+
+---
+
+**4. Linear regression with lag feature (autoregression model)**
+
+- Use lagged sales (yesterday’s sales) as predictor.
+- Train regression model to predict today’s sales.
+- Compare actual vs predicted values in lag space.  
+![Lag Model](time-series/results/Average_Sales.png)
+
+---
+
+## Key Takeaways
+
+- Linear regression in time series can use **two types of features**:
+  - **Time-step features**: derived directly from the time index (e.g., a simple counter, month, weekday).  
+  - **Lag features**: past values of the target used to predict the current value.  
+
+- **Ordinary Least Squares (OLS)** regression estimates parameters (weights and bias) by minimizing squared error between predictions and true values.  
+  - Weights = regression coefficients (effect of features).  
+  - Bias = intercept (y-axis crossing point).  
+
+- **Trend model (time-step feature)** captures long-term patterns.  
+- **Lag model (autoregression)** captures short-term dependencies.  
+- Combining both types of features is often necessary for real-world forecasting tasks.  
+
+---
+
