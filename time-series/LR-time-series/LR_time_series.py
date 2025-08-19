@@ -18,7 +18,7 @@ from sklearn.linear_model import LinearRegression
 # - Remove the "Paperback" column (we only analyze "Hardcover").
 
 book_sales = pd.read_csv(
-    'time-series/book_sales.csv',
+    'time-series/dataset/book_sales.csv',
     index_col='Date',
     parse_dates=['Date'],
 ).drop('Paperback', axis=1)
@@ -35,7 +35,7 @@ book_sales = book_sales.reindex(columns=['Hardcover', 'Time', 'Lag_1'])
 # -------------------------
 # Load autoregressive dataset (two toy series)
 # -------------------------
-ar = pd.read_csv('time-series/ar.csv')
+ar = pd.read_csv('time-series/dataset/ar.csv')
 
 # -------------------------
 # Load and preprocess "store_sales" dataset
@@ -48,7 +48,7 @@ dtype = {
 }
 # Load daily sales data
 store_sales = pd.read_csv(
-    'time-series/train.csv',
+    'time-series/dataset/train.csv',
     dtype=dtype,
     parse_dates=['date'],
 )
