@@ -61,3 +61,4 @@ cython_debug/
 .vscode/
 
 *csv*.csv
+time-series/dataset/*.csv
