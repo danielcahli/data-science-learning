@@ -17,7 +17,7 @@ A palindrome reads the same backward and forward (ignoring spaces and capitaliza
 
 ## 4. Read File
 Parses a plain‑text file of student scores, validates each line, and prints total points per student.
-Each line must contain exactly three whitespace‑separated fields:
+Each line must contain exactly three whitespace‑separated fields.
 
 ## 5. Sudoku
 
