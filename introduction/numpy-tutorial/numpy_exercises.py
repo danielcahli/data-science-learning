@@ -1,22 +1,6 @@
 #!/usr/bin/env python3
-"""
-NumPy quick tour with runnable, minimal examples.
 
-Covers:
-- Arrays, dtypes, indexing, slicing
-- Copies vs views, reshape, iteration
-- Stacking, splitting
-- Search, sort, filter
-- Random sampling (randint, rand, choice with probs), shuffling
-- Ufuncs and vectorized arithmetic
-- Rounding, logs
-- Reductions (sum, prod, cumprod, cumsum), diff
-- Number theory (lcm, gcd)
-- Trig and hyperbolic funcs
-- Set ops (unique, union, intersection, setdiff, setxor)
-
-Requires: numpy>=1.20
-"""
+# NumPy quick tour with runnable, minimal examples.
 
 import numpy as np
 from numpy import random
@@ -286,4 +270,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
 
