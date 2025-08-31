@@ -20,6 +20,7 @@ Parses a plain‑text file of student scores, validates each line, and prints to
 Each line must contain exactly three whitespace‑separated fields.
 
 ## 5. Sudoku
+This script validates a Sudoku solution by checking whether each row and each column contains all digits from 1 to 9 exactly once.
 
 ## 6. Timer
 

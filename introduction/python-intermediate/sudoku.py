@@ -1,22 +1,34 @@
-count = 0
-list_numbers = []
+# Sudoku validator (rows and columns only)
+
 list_sudoku = [1,2,3,4,5,6,7,8,9]
-while count < 9:
-    count += 1
-    list_numbers.append(input("Give numbers from 1 to 9: ") )
 
-list_rows =[]
-for i in range(0,8):
-    for d in list_numbers[i]:
-        list_rows.append(int(d)) 
-        if sorted(list_rows) != list_sudoku:
+# Read 9 rows of Sudoku
+list_numbers = []
+for i in range(9):
+    row = input(f"Give row {i+1} (9 digits 1-9, no spaces): ")
+    if len(row) != 9 or not row.isdigit():
+        raise ValueError("Each row must be 9 digits from 1 to 9")
+    list_numbers.append([int(x) for x in row])
+
+# Check rows
+sudoku = True
+for row in list_numbers:
+    if sorted(row) != list_sudoku:
+        sudoku = False
+        break
+
+# Check columns
+if sudoku:
+    for col in range(9):
+        column = [list_numbers[row][col] for row in range(9)]
+        if sorted(column) != list_sudoku:
             sudoku = False
-        else: sudoku = True
+            break
 
-list_colums = []
-for i in range(0,8):
-    for j in range(0,8):
-    list_colums.append(list_numbers[i].index(j)) 
+if sudoku:
+    print("Sudoku rows and columns are valid.")
+else:
+    print("Sudoku is invalid.")
 
 
 
