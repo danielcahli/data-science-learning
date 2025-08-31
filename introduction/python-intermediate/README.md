@@ -23,6 +23,11 @@ Each line must contain exactly three whitespace‑separated fields.
 This script validates a Sudoku solution by checking whether each row and each column contains all digits from 1 to 9 exactly once.
 
 ## 6. Timer
+This script defines a Timer class that simulates a 24-hour digital clock.
+Initialization: A Timer object starts with specified hours, minutes, and seconds (default 00:00:00).
+Formatting: Time is always displayed in HH:MM:SS format. Methods:
+next_second() → moves the clock forward by one second, handling wrap-around after 23:59:59 → 00:00:00.
+prev_second() → moves the clock backward by one second, handling wrap-around before 00:00:00 → 23:59:59.
 
 ## 7. Triangle
 
